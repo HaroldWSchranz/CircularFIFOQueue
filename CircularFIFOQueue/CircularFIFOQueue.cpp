@@ -7,7 +7,7 @@
 
 void push_function(circular_queue& a_circular_queue);
 void pop_function(circular_queue& a_circular_queue);
-const int MAX_VALUE = 50;
+const int MAX_VALUE = 9;
 int main()
 {
 	circular_queue m_circular_queue;
@@ -15,9 +15,9 @@ int main()
 		std::thread(push_function, std::ref(m_circular_queue));
 	publisher.join();
 
-	//auto consumer =
-	//	std::thread(pop_function, std::ref(m_circular_queue));
-	//consumer.join();
+	auto consumer =
+		std::thread(pop_function, std::ref(m_circular_queue));
+	consumer.join();
 
 	return 0;
 }

@@ -4,6 +4,10 @@ circular_queue::circular_queue() : m_read_index(0), m_write_index(0)
 {
 }
 
+circular_queue::~circular_queue()
+{
+}
+
 bool circular_queue::push(const int& item)
 {
 	if (is_full())
